@@ -1,0 +1,34 @@
+{
+  "name": "shapez",
+  "displayName": "shapez",
+  "description": "Shape-Z Syntax Highlighter",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "shapez",
+        "aliases": [
+          "Shape-Z",
+          "shapez"
+        ],
+        "extensions": [
+          "shpz"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "shapez",
+        "scopeName": "source.shpz",
+        "path": "./syntaxes/shapez.tmLanguage.json"
+      }
+    ]
+  }
+}

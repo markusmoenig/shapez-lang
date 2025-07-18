@@ -1,0 +1,42 @@
+{
+	"scopeName": "source.shpz",
+	"name": "Shape-Z",
+	"fileTypes": [
+		"shpz"
+	],
+	"patterns": [
+		{
+			"match": "\\b(voxel|shape|segment|pattern|place|fill|attach|if|else)\\b",
+			"name": "keyword.control.shpz"
+		},
+		{
+			"match": "\\b(vec3)\\b",
+			"name": "support.type.vec.shpz"
+		},
+		{
+			"match": "\\b(sin|cos|floor|fract|radians|degrees|length|abs)\\b",
+			"name": "support.function.shpz"
+		},
+		{
+			"match": "[0-9]+(\\.[0-9]+)?",
+			"name": "constant.numeric.shpz"
+		},
+		{
+			"match": "\"[^\"]*\"",
+			"name": "string.quoted.double.shpz"
+		},
+		{
+			"match": "\\{|\\}",
+			"name": "punctuation.brace.shpz"
+		},
+		{
+			"match": ";",
+			"name": "punctuation.terminator.shpz"
+		}
+		{
+			"match": "%",
+			"name": "keyword.operator.arithmetic.mod.shpz"
+		}
+	],
+	"uuid": "shapez-lang-uuid"
+}
