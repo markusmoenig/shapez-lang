@@ -6,14 +6,14 @@
 	],
 	"patterns": [
 		{
-			"include": "#segmentDefinition"
+			"include": "#definitions"
 		},
 		{
-			"match": "\\b(voxel|pattern|place|attach|if|else|let|material|Clear)\\b",
+			"match": "\\b(voxel|pattern|place|attach|if|if_clear|else|let|material|Clear)\\b",
 			"name": "keyword.control.shpz"
 		},
 		{
-			"match": "\\b(albedo|roughness|metallic|transmission|emission|ior|clearcoat|clearcoat_gloss|ior|brick|cement|even|odd)\\b",
+			"match": "\\b(albedo|roughness|metallic|transmission|specular_tint|sheen|sheen_tint|sunsurface|emission|ior|clearcoat|clearcoat_gloss|brick|cement|even|odd)\\b",
 			"name": "variable.other.member.shpz"
 		},
 		{
@@ -21,7 +21,7 @@
 			"name": "support.type.vec.shpz"
 		},
 		{
-			"match": "\\b(sin|cos|floor|fract|radians|degrees|length|abs)\\b",
+			"match": "\\b(sin|cos|floor|fract|radians|degrees|length|abs|mix|smoothstep)\\b",
 			"name": "support.function.shpz"
 		},
 		{
@@ -29,12 +29,32 @@
 			"name": "variable.language.shpz"
 		},
 		{
-			"match": "[0-9]+(\\.[0-9]+)?",
-			"name": "constant.numeric.shpz"
+			"match": "\\b[A-Z][A-Za-z0-9_]*\\s*;",
+			"name": "support.function.call.shpz"
 		},
 		{
-			"match": "\"[^\"]*\"",
-			"name": "string.quoted.double.shpz"
+			"match": "==|!=|<=|>=|<|>",
+			"name": "keyword.operator.comparison.shpz"
+		},
+		{
+			"match": "\\|\\||&&",
+			"name": "keyword.operator.logical.shpz"
+		},
+		{
+			"match": "!",
+			"name": "keyword.operator.logical.not.shpz"
+		},
+		{
+			"match": "%",
+			"name": "keyword.operator.arithmetic.mod.shpz"
+		},
+		{
+			"match": "=",
+			"name": "keyword.operator.assignment.shpz"
+		},
+		{
+			"match": "[0-9]+(\\.[0-9]+)?",
+			"name": "constant.numeric.shpz"
 		},
 		{
 			"match": "\\{|\\}",
@@ -45,49 +65,46 @@
 			"name": "punctuation.terminator.shpz"
 		},
 		{
-			"match": "%",
-			"name": "keyword.operator.arithmetic.mod.shpz"
-		},
-		{
 			"match": "//.*$",
 			"name": "comment.line.double-slash.shpz"
 		},
 		{
 			"begin": "/\\*",
 			"end": "\\*/",
-			"name": "comment.block.shpz",
-			"patterns": [
-				{
-					"match": "[^*]+",
-					"name": "comment.block.shpz"
-				}
-			]
+			"name": "comment.block.shpz"
 		}
 	],
 	"repository": {
-		"segmentDefinition": {
-			"begin": "\\b(voxel|segment|shape|pattern)\\s+([A-Za-z_][A-Za-z0-9_]*)",
-			"beginCaptures": {
-				"1": {
-					"name": "keyword.control.shpz"
-				},
-				"2": {
-					"name": "string.quoted.name.shpz"
-				}
-			},
-			"end": "(?=\\{)",
+		"definitions": {
 			"patterns": [
 				{
-					"match": "\\b(depth|radius|size|at)\\b",
-					"name": "variable.parameter.shpz"
-				},
-				{
-					"match": "=",
-					"name": "keyword.operator.assignment.shpz"
-				},
-				{
-					"match": "[0-9]+(\\.[0-9]+)?",
-					"name": "constant.numeric.shpz"
+					"begin": "\\b(voxel|segment|shape|pattern|place)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.shpz"
+						},
+						"2": {
+							"name": "string.quoted.name.shpz"
+						}
+					},
+					"end": "(?=\\{)",
+					"patterns": [
+						{
+							"match": "\\b(depth|radius|size|at|gap|rounding)\\b",
+							"name": "variable.parameter.shpz"
+						},
+						{
+							"match": "[0-9]+(\\.[0-9]+)?",
+							"name": "constant.numeric.shpz"
+						},
+						{
+							"match": "=",
+							"name": "keyword.operator.assignment.shpz"
+						},
+						{
+							"include": "$self"
+						}
+					]
 				}
 			]
 		}
