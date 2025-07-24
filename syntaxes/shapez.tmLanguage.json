@@ -9,11 +9,11 @@
 			"include": "#definitions"
 		},
 		{
-			"match": "\\b(voxel|pattern|place|attach|if|if_clear|else|let|material|Clear)\\b",
+			"match": "\\b(voxel|pattern|place|attach|if|if_clear|else|let|material|Clear|config|import|camera)\\b",
 			"name": "keyword.control.shpz"
 		},
 		{
-			"match": "\\b(albedo|roughness|metallic|transmission|specular_tint|sheen|sheen_tint|sunsurface|emission|ior|clearcoat|clearcoat_gloss|brick|cement|even|odd)\\b",
+			"match": "\\b(albedo|roughness|metallic|transmission|specular_tint|sheen|sheen_tint|sun_dir|sun_emission|emission|ior|clearcoat|clearcoat_gloss|brick|cement|even|odd|density|background|origin|center|scale|fov)\\b",
 			"name": "variable.other.member.shpz"
 		},
 		{
@@ -21,7 +21,7 @@
 			"name": "support.type.vec.shpz"
 		},
 		{
-			"match": "\\b(sin|cos|floor|fract|radians|degrees|length|abs|mix|smoothstep)\\b",
+			"match": "\\b(sin|cos|floor|fract|radians|degrees|length|abs|mix|smoothstep|clamp|smooth_union|value_noise|white_noise|sqrt|log|pow|tan|atan|atan2|dot|cross|normalize|log)\\b",
 			"name": "support.function.shpz"
 		},
 		{
@@ -72,13 +72,17 @@
 			"begin": "/\\*",
 			"end": "\\*/",
 			"name": "comment.block.shpz"
+		},
+		{
+			"match": "\"(?:\\\\.|[^\"\\\\])*\"",
+			"name": "string.quoted.double.shpz"
 		}
 	],
 	"repository": {
 		"definitions": {
 			"patterns": [
 				{
-					"begin": "\\b(voxel|segment|shape|pattern|place)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+					"begin": "\\b(voxel|segment|shape|pattern|place|camera)\\s+([A-Za-z_][A-Za-z0-9_]*)",
 					"beginCaptures": {
 						"1": {
 							"name": "keyword.control.shpz"
