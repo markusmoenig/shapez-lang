@@ -9,11 +9,11 @@
 			"include": "#definitions"
 		},
 		{
-			"match": "\\b(voxel|pattern|place|attach|if|if_clear|else|let|material|Clear|config|import|camera)\\b",
+			"match": "\\b(voxel|pattern|place|attach|if|if_clear|else|let|material|Clear|config|import|camera|medium)\\b",
 			"name": "keyword.control.shpz"
 		},
 		{
-			"match": "\\b(albedo|roughness|metallic|transmission|specular_tint|sheen|sheen_tint|sun_dir|sun_emission|emission|ior|clearcoat|clearcoat_gloss|brick|cement|even|odd|density|background|origin|center|scale|fov)\\b",
+			"match": "\\b(albedo|roughness|metallic|transmission|specular_tint|sheen|sheen_tint|sun_dir|sun_emission|emission|ior|clearcoat|clearcoat_gloss|brick|cement|even|odd|density|background|origin|center|scale|fov|Absorb|Emissive|color|density)\\b",
 			"name": "variable.other.member.shpz"
 		},
 		{
@@ -21,7 +21,7 @@
 			"name": "support.type.vec.shpz"
 		},
 		{
-			"match": "\\b(sin|cos|floor|fract|radians|degrees|length|abs|mix|smoothstep|clamp|smooth_union|value_noise|white_noise|sqrt|log|pow|tan|atan|atan2|dot|cross|normalize|log)\\b",
+			"match": "\\b(sin|cos|floor|fract|radians|degrees|length|abs|mix|smoothstep|clamp|smooth_union|value_noise|white_noise|sqrt|log|pow|tan|atan|atan2|dot|cross|normalize|log|point_at)\\b",
 			"name": "support.function.shpz"
 		},
 		{
