@@ -9,11 +9,11 @@
 			"include": "#definitions"
 		},
 		{
-			"match": "\\b(voxel|pattern|place|attach|if|if_clear|else|let|material|Clear|config|import|camera|medium)\\b",
+			"match": "\\b(voxel|pattern|place|attach|if|if_clear|else|let|material|Clear|config|import|camera|medium|distance)\\b",
 			"name": "keyword.control.shpz"
 		},
 		{
-			"match": "\\b(albedo|roughness|metallic|transmission|specular_tint|sheen|sheen_tint|sun_dir|sun_emission|emission|ior|clearcoat|clearcoat_gloss|brick|cement|even|odd|density|background|origin|center|scale|fov|Absorb|Emissive|color|density)\\b",
+			"match": "\\b(albedo|roughness|metallic|transmission|specular_tint|sheen|sheen_tint|sun_dir|sun_emission|emission|ior|clearcoat|clearcoat_gloss|brick|cement|even|odd|density|background|origin|center|scale|fov|Absorb|Emissive|color|density|volume|profile_offset|profile_scale)\\b",
 			"name": "variable.other.member.shpz"
 		},
 		{
@@ -82,7 +82,7 @@
 		"definitions": {
 			"patterns": [
 				{
-					"begin": "\\b(voxel|segment|shape|pattern|place|camera)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+					"begin": "\\b(voxel|segment|shape|pattern|place|camera|distance)\\s+([A-Za-z_][A-Za-z0-9_]*)",
 					"beginCaptures": {
 						"1": {
 							"name": "keyword.control.shpz"
