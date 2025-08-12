@@ -9,7 +9,7 @@
 			"include": "#definitions"
 		},
 		{
-			"match": "\\b(voxel|pattern|place|attach|if|if_clear|else|let|material|Clear|config|import|camera|medium|distance)\\b",
+			"match": "\\b(voxel|pattern|place|attach|if|if_clear|else|let|material|Clear|config|import|camera|medium|distance|fn|return)\\b",
 			"name": "keyword.control.shpz"
 		},
 		{
