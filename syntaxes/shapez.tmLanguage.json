@@ -25,6 +25,22 @@
 			"name": "support.function.shpz"
 		},
 		{
+			"match": "\\bfn\\s+([A-Za-z_][A-Za-z0-9_]*)",
+			"captures": {
+				"1": {
+					"name": "entity.name.function.shpz"
+				}
+			}
+		},
+		{
+			"match": "\\b(?!(?:voxel|pattern|place|attach|if|if_clear|else|let|material|Clear|config|import|camera|medium|distance|fn|return)\\b)([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\()",
+			"captures": {
+				"1": {
+					"name": "support.function.shpz"
+				}
+			}
+		},
+		{
 			"match": "\\b(sdf|inside|u|v|d|hash)\\b",
 			"name": "variable.language.shpz"
 		},
